@@ -127,7 +127,7 @@ function loan() {
 
     	$.ajax({
     		type: "POST",
-    		url: baseURL + "almaws/v1/users/" + user.primary_id + "/loans?user_id_type=all_unique&item_barcode=" + $("#barcode").val() + "&apikey=" + apiKey,
+    		url: baseURL + "almaws/v1/users/" + user.primary_id + "/loans?user_id_type=all_unique&item_barcode=" + encodeURIComponent($("#barcode").val()) + "&apikey=" + apiKey,
     		contentType: "application/xml",
     		data: "<?xml version='1.0' encoding='UTF-8'?><item_loan><circ_desk>" + circDesk + "</circ_desk><library>" + libraryName + "</library></item_loan>",
     		dataType: "xml"
